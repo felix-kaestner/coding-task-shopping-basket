@@ -5,5 +5,5 @@
  */
 @JvmInline
 value class Inventory(private val items: List<Product> = listOf()) {
-    fun getProductByName(productName: String): Product? = items.find { it.name == productName }
+    fun getProductByName(productName: String): Product? = items.find { item -> item.name == productName }
 }

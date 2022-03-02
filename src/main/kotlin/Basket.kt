@@ -9,15 +9,15 @@ import java.math.RoundingMode
  */
 class Basket(private val inventory: Inventory) {
     private val items = mutableListOf<Product>()
-    private val deals = mutableListOf<Deal>()
+    private val deals = mutableSetOf<Deal>()
 
     /**
      * The computed total price of the basket.
      */
     val total: Double
         get() =
-            items.sumOf{ it.price } // Sum the prices of all items in the basket
-                .minus(deals.sumOf { it.reduction(items) }) // Subtract the reduction of all deals from the total
+            items.sumOf{ item -> item.price } // Sum the prices of all items in the basket
+                .minus(deals.sumOf { deal -> deal.reduction(items) }) // Subtract the reduction of all deals from the total
                 .toBigDecimal().setScale(2, RoundingMode.HALF_UP).toDouble() // Round to 2 decimal places
 
     /**
@@ -33,11 +33,9 @@ class Basket(private val inventory: Inventory) {
     /**
      * Adds a deal to the basket.
      *
-     * Only adds a deal if it is not already in the basket.
+     * Since [deals] is a set, it is garant.
      */
     fun addDeal(deal: Deal) {
-        if (deal !in deals) {
-            deals.add(deal)
-        }
+        deals.add(deal)
     }
 }
