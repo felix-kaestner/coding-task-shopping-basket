@@ -4,7 +4,9 @@ The solution is written in [Kotlin](https://kotlinlang.org/). [Gradle](https://g
 
 ## Quickstart
 
-Test the library using `./gradlew` (substitute `.\gradlew.bat` on Windows).
+Sample usage according to the task can be found in [src/test/kotlin/BasketTest.kt](src/test/kotlin/BasketTest.kt).
+
+All unit tests can be executed using `./gradlew` (substitute `.\gradlew.bat` on Windows).
 
 ```sh
 $ ./gradlew test
