@@ -1,5 +1,7 @@
 # Shopping-Basket
 
+This repository contains a minimal shopping basket implementation written in Kotlin, written as part of a coding task during a job application.
+
 The solution is written in [Kotlin](https://kotlinlang.org/). [Gradle](https://gradle.org/) is used as a build tool. Unit tests are done using [Junit 5](https://junit.org/junit5/). No additional dependencies are used.
 
 ## Quickstart
